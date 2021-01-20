@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul#垂直{
+            list-style-type:none;
+            padding:0;
+            margin:0;
+            width:10%;
+            position:fixed;
+            height:100%;
+            overflow:auto;
+            font-family: sans-serif;
+            background-color: antiquewhite;
+            border:1px solid black;
+        }
+        li#垂直 a#垂直{
+            text-decoration: none;
+            display:block;
+            padding:8px;
+            background-color:antiquewhite;
+            color:black;
+        }
+        li#垂直 a#垂直:hover{
+            background-color: black;
+            color:white;
+            font-weight: bold;
+        }
+        li#垂直{
+            text-align: center;
+            border-bottom: 1px solid black;
+        }
+
+        ul#水平{
+            list-style-type:none;
+            margin-left:10%;
+            padding:0;
+            overflow:hidden;
+            background-color:antiquewhite;
+            border:1px solid black;
+            border-left:none;
+        }
+        ul#水平 li{
+            padding:0;
+            float:left;
+            border-right:1px solid black;
+        }
+        ul#水平 li a#水平{
+            display:block;
+            text-decoration: none;
+            text-align:center;
+            padding:8px 22px;
+            color:black;
+        }
+        ul#水平 li a#水平:hover{
+            background-color: black;
+            color: white;
+            font-weight: bold;
+        }
+
+        #弹窗{
+            display:none;
+            position:absolute;
+            margin-left:3px;
+            background-color: olivedrab;
+            color:white;
+        }
+        #弹窗 a{
+            display:block;
+            text-decoration:none;
+            font-family: sans-serif;
+            padding:12px 16px;
+            margin:0;
+            color:white
+        }
+        #弹窗 a:hover{
+            background-color: black;
+        }
+        li:hover #弹窗{
+            display:block;
+        }
+
+        #提示框{
+            visibility:hidden;
+            position:absolute;
+            left:190px;
+            background:black;
+            color:white;
+            padding:12px 16px;
+            border-radius:6px;
+            margin-top:6px;
+            z-index:1;
+            opacity:0;
+            transition: opacity 1s;
+        }
+        li:hover #提示框{
+            visibility:visible;
+            opacity:1;
+        }
+        #提示框::after{
+            content:" ";
+            position:absolute;
+            bottom:100%;
+            left:50%;
+            margin-left:-5px;
+            border-bottom:5px;
+            border-style:solid;
+            border-color:transparent transparent black transparent;
+        }
+
+        #图片{
+            float:left;
+            border:1px solid #ccc;
+            position:absolute;
+            width:40%;
+            left:12%;
+            margin:5px;
+        }
+        #图片:hover{
+            border:1px solid #777;
+        }
+        #图片 img{
+            opacity:0.4;
+            width:100%;
+        }
+        #图片 img:hover{
+            opacity:1;
+        }
+
+    </style>
+</head>
+<body style="font-family:sans-serif;">
+    <ul id="垂直">
+        <li id="垂直"><a id="垂直" href="#首页" target="_top">首页</a></li>
+        <li id="垂直"><a id="垂直" href="#新闻">新闻</a></li>
+        <li id="垂直"><a id="垂直" href="#购物">购物</a></li>
+        <li id="垂直"><a id="垂直" href="#我的">我的</a></li>
+        <li id="垂直"><a id="垂直" href="#关于">关于</a></li>
+    </ul>
+
+    <ul id="水平">
+        <li><a id="水平" href="#首页" target="_top">首页</a>
+            <div id="弹窗">
+                <a href="#新闻">精致的首页</a>
+                <a href="#新闻">精致的嗷嗷</a>
+                <a href="#新闻">精致的aa</a>
+                <a href="#新闻">精致的bb</a>
+            </div>
+        </li>
+        
+        <li><a id="水平" href="#新闻">新闻</a>
+            <span id="提示框">精致的提示框</span>
+        </li>
+        <li><a id="水平" href="#购物">购物</a></li>
+        <li><a id="水平" href="#我的">我的</a></li>
+        <li><a id="水平" href="#关于">关于</a></li>
+    </ul>
+    <div id="图片">
+        <img src="花.jpg" width="600px">
+        <div style="padding:16px;text-align:center;">小花</div>
+    </div>
+</body>
+</html>
