@@ -10,10 +10,83 @@
             var txt = str.replace(/moto/i,"apple");
             document.getElementById("demo").innerHTML=txt;
         }
+        function fault_message(){
+            try{
+                addlert("嘿嘿嘿");
+            }
+            catch(err){
+                txt="本页又一个错误。\n\n";
+                txt+="错误描述:"+err.message+"\n\n";
+                txt+="点击确定继续。";
+                alert(txt);
+            }
+        }
     </script>
 </head>
 <body>
     <p id="demo">hello moto</p>
-    <button onclick="alternate()">不要moto</button>
+    <button onclick="alternate()">不要moto</button><br />
+    <button onclick="fault_message()">显示错误</button>
+
+    <div class="pan">
+        <input type="text" id = "输入">
+        <button type="button" onclick="judge()">判断</button>
+        <p id = "输出"></p>
+    </div>
+
+    <br />
+    <script>
+        function judge(){
+            var output,input;
+            output = document.getElementById("输出");
+            input = document.getElementById("输入").value;
+            try{
+                if(input == "") throw "空";
+                if(isNaN(input)) throw "is not a number";
+                input = Number(input);
+                if(input > 0) throw "正数";
+                if(input <= 0) throw "负数";
+            }
+            catch(err){
+                output.innerHTML=err;
+            }
+            finally{
+                document.getElementById("输入").value="";
+            }
+        }
+    </script>
+
+    <form onsubmit="return validateForm1();" name="myform">
+        name
+        <input type="text" name="fname">
+        <input type="submit" value="tijiao">
+    </form>
+
+    <script>
+        function validateForm1(){
+            var input=document.forms["myform"]["fname"].value;
+            if(input == "" || input == null){
+                alert("空");
+                return false;
+            }
+            
+        }
+    </script>
+
+    <form name="myForm" action="demo-form.php" onsubmit="return validateForm();" method="post">
+        Email: <input type="text" name="email">
+        <input type="submit" value="提交">
+    </form>
+    <script>
+        function validateForm(){
+            var x=document.forms["myForm"]["email"].value;
+            var atpos=x.indexOf("@");
+            var dotpos=x.lastIndexOf(".");
+            if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length){
+                alert("不是一个有效的 e-mail 地址");
+                  return false;
+            }
+        }
+    </script>
 </body>
 </html>
