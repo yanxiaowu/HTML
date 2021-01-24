@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #btn {
+            width: 100px;
+            height: 50px;
+            background-color: green;
+        }
+
+        .hider {
+            width: 96px;
+            height: 100px;
+            background-color: green;
+            border: 2px solid grey;
+            color: white;
+            font-family: sans-serif;
+        }
+
+        .center{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+
+    <script src="https://cdn.staticfile.org/jquery/3.4.0/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#btn").click(function () {
+                if($(".hider").is(':hidden')){
+                    $(".hider").show();
+                }else{
+                    $(".hider").hide();
+                }
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="btn"></div>
+    <div class="hider center">
+        <div>隐藏的内容</div>
+    </div>
+</body>
+
+</html>
