@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("p").dblclick(function () {
+                $(this).hide();
+            });
+        });
+    </script>
+
+    <style>
+        #hide {
+            border: 2px solid green;
+            width: 200px;
+            height: 100px;
+            background-color: greenyellow;
+            display: table;
+        }
+        #content {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            overflow: hidden;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            $("#btn").click(function () {
+                $("#hide").hide(1000);
+            });
+            $("#xbtn").click(function(){
+                $("#hide").show(1000);
+            });
+        });
+        
+    </script>
+</head>
+
+<body>
+    <p>wo</p>
+    <p>ai</p>
+    <p>ni</p>
+    <div id="btn">隐藏</div>
+    <div id="xbtn">显示</div>
+    <div id="hide">
+        <div id="content">yao yin cang de nei rong</div>
+    </div>
+    <div>abbb</div>
+</body>
+
+</html>
