@@ -1,0 +1,10 @@
+.container{
+    width: 30em;
+    border: 1em solid;
+}
+.box{
+    width:50%;
+    float: left;
+    border: 1em solid red;
+    box-sizing: border-box;
+}
