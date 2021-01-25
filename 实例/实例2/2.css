@@ -1,0 +1,8 @@
+.newspaper{
+    column-count: 3;
+    column-gap: 40px;
+    column-rule-style: dotted;
+}
+h1{
+    column-span: all;
+}
