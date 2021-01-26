@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 70px;
+            height: 70px;
+            background-color: red;
+            position: relative;
+            animation-name: mymove;
+            animation-direction: alternate;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-fill-mode: forwards;
+            animation-timing-function: linear;
+        }
+
+        button {
+            position:relative;
+            top:300px;
+        }
+
+        @keyframes mymove {
+            0% {background-color: red; left: 0px; top: 0px;}
+            25% {background-color: yellow; left: 100px; top: 0px;}
+            50% {background-color: green; left: 100px; top: 100px;}
+            75% {background-color: blue; left: 0px; top: 100px;}
+            100% {background-color: red; left: 0px; top: 0px;}
+        }
+
+        @keyframes mymove_delay {
+            from {left: 0px;}
+            to {left: 200px;}
+        }
+    </style>
+
+    <script>
+        function stop(){
+            var obj = document.getElementById("d1");
+            if(obj.style.animationPlayState == "paused"){
+                obj.style.animationPlayState = "running";
+            }
+            else{
+                obj.style.animationPlayState="paused";
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <div id="d1"></div>
+    <button onclick="stop()">暂停</button>
+</body>
+</html>
