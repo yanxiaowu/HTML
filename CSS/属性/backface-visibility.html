@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: rotateY(180deg);
+        }
+        #div1 {
+            -webkit-backface-visibility: hidden;
+        }
+        #div2 {
+            -webkit-backface-visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">DIV 1</div>
+    <div id="div2">DIV 2</div>
+</body>
+</html>
