@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            border: 10px dotted black;
+            padding:35px;
+            background-color:yellow;
+        }
+
+        #div2 {
+            border: 10px dotted black;
+            padding:35px;
+            background-color: yellow;
+            background-clip: padding-box;
+        }
+
+        #div3 {
+            border: 10px dotted black;
+            padding: 35px;
+            background-color: yellow;
+            background-clip: content-box;
+        }
+    </style>
+</head>
+<body>
+    <p>没有背景裁剪（border-box没有定义）:</p>
+    <div id="div1">
+        <h2>Lorem Ipsum Dolor</h2>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+             tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+    </div>
+
+    <p>background-clip:padding-box:</p>
+    <div id="div2">
+        <h2>Lorem Ipsum Dolor</h2>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+             tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+    </div>
+
+    <p>background-clip:content-box:</p>
+    <div id="div3">
+        <h2>Lorem Ipsum Dolor</h2>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+             tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+    </div>
+</body>
+</html>
