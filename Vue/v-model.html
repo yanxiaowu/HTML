@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    v-model的作用是便捷地设置和获取表单元素的值
+    绑定的数据会和表单元素相关联
+    绑定元素的值<-->表单元素的值
+    <div id="app">
+        <input type="button" value="修改message" @click="setM">
+        <input type="text" v-model="message" @keyup.enter="getM" />
+        <h2>{{ message }}</h2>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                message: "黑马程序员",
+            },
+            methods: {
+                getM: function() {
+                    alert(this.message);
+                },
+                setM: function() {
+                    this.message="酷丁鱼";
+                }
+            }
+        })
+    </script>
+</body>
+</html>
