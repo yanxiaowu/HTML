@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="test" @click="doIt('laotie','666')">
+        <input type="text" @keyup.enter="sayHi">
+    </div>
+    
+    <script>
+        new Vue({
+            el:"#app",
+            methods: {
+                doIt: function(p1,p2){
+                    console.log(p1);
+                    console.log(p2);
+                },
+                sayHi: function(){
+                    alert("chileme");
+                }
+            }
+        })
+    </script>
+</body>
+</html>
