@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <img v-bind:src="imgSrc" alt="pg" :class="isActive?'active':''" @click="toggleActive">
+        <img :src="imgSrc" alt="pg" :title="imgTitle + '!!!!'" :class=
+        "{active:isActive}" @click="toggleActive">
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data:{
+                imgSrc:"../CSS/苹果.png",
+                imgTitle:"nbdepg",
+                isActive: false
+            },
+            methods:{
+                toggleActive: function(){
+                    this.isActive = !this.isActive;
+                }
+            }
+        })
+    </script>
+
+    <style>
+        .active{
+            border: 1px solid #444;
+        }
+    </style>
+</body>
+</html>
