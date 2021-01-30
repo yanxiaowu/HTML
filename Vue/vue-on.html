@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="vueon" v-on:click="doIt">
+        <input type="button" value="jianxie" @click="doIt">
+        <input type="button" value="shuangji" @dblclick="doIt"><br>
+        <h1 @click="changeFood">{{food}}</h1>
+    </div>
+
+    <script>
+        new Vue({
+            el:"#app",
+            data: {
+                food:"shi"
+            },
+            methods: {
+                doIt: function(){
+                    alert("doit");
+                },
+                changeFood: function(){
+                    // console.log(this.food);
+                    this.food+=" zhenxiang ";
+                }
+            }
+        })
+    </script>
+</body>
+</html>
