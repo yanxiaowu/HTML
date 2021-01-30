@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+    <style>
+        .class1{
+            background-color: #444;
+            color: #eee;
+        }
+    </style>
+
+    <div id="app">
+        <label for="r1">change color</label>
+        <input type="checkbox" id="r1" v-model="use">
+        <br><br>
+        <div v-bind:class="{'class1': use}">v-bind:class</div>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                use: false
+            }
+        });
+    </script>
+</body>
+</html>
