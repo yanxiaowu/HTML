@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+    <input type="button" value="get请求" class="get">
+    <input type="button" value="post请求" class="post">
+    <script>
+        document.querySelector(".get").onclick = function(){
+            axios.get("https://autumnfish.cn/api/joke/list?num=3")
+            .then(function(response) {
+                console.log(response);
+            },function(err){
+                console.log(err);
+            })
+        }
+        document.querySelector(".post").onclick = function(){
+            axios.post("https://autumnfish.cn/api/user/reg1",{username: "盐焗西兰花aaa"})
+            .then(function(response){
+                console.log(response);
+            },function(err){
+                console.log(err);
+            })
+        }
+    </script>
+</body>
+</html>
