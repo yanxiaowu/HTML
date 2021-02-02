@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="-" @click="few">
+        <span>
+            {{number}}
+        </span>
+        <input type="button" value="+" @click="more">
+    </div>
+
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                number:1
+            },
+            methods: {
+                few: function(){
+                    // alert("-");
+                    
+                    if(this.number==0){
+                        alert("too few");
+                    }
+                    else{
+                        this.number-=1;
+                    }
+                },
+                more: function(){
+                    // alert("+");
+                    
+                    if(this.number==10){
+                        alert("too much");
+                    }
+                    else{
+                        this.number+=1;
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>
