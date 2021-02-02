@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+    
+    </script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #sousuokuang{
+            width: 508px;
+            height: 64px;
+        }
+        input{
+            width: 400px;
+            height: 60px;
+            background:rgba(0, 0, 0, .4) ;
+            font-size: 40px;
+            float: left;
+        }
+
+        #sousuo{
+            margin: 0;
+            width: 100px;
+            height: 62px;
+            border: 1px solid;
+            text-align: center;
+            line-height: 64px;
+            float: left;
+        }
+        #sousuo:hover{
+            background-color: blue;
+            color: white;
+        }
+
+        #xianshi li{
+            list-style: none;
+            float: left;
+            margin: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div id="sousuokuang">
+            <input type="text" v-on:keyup.enter="searchWeather" v-model="city">
+            <div id="sousuo" @click = "searchWeather"> 搜索 </div>
+        </div>
+        
+        <ul id="xianshi">
+            <li @click = "changeCity('北京')">北京</li>
+            <li @click = "changeCity('上海')">上海</li>
+            <li @click = "changeCity('广州')">广州</li>
+            <li @click = "changeCity('深圳')">深圳</li>
+        </ul><br><br>
+
+        <ul>
+            <li v-for="item in weatherArr">
+                <div>
+                    <span>{{item.type}}</span>
+                </div>
+                <div>
+                    <b>{{item.low}}</b>
+                    <b>{{item.high}}</b>
+                </div>
+                <div>
+                    <span>{{item.date}}</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+</html>
