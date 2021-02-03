@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .boxfix:before,
+        .boxfix:after {
+            content: "";
+            display: table;
+        }
+        .boxfix:after {
+            clear: both;
+        }
+        .box {
+            width: 200px;
+            background-color: #e4e4e4;
+        }
+        .inbox {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin-bottom: 10px;
+        }
+        .inboxs {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin-bottom: 10px;
+        }
+        .outbox {
+            background-color: pink;
+            height: 100px;
+            width: 100px;
+        }
+        .box,
+        .outbox {
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+        .outbox {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box boxfix">
+        <div class="inbox">1</div>
+        <div class="inbox">2</div>
+        <div class="inboxs">3</div>
+        <div class="inboxs">3</div>
+        <div class="inboxs">3</div>
+        <div class="inboxs">3</div>
+    </div>
+    <div class="outbox">outbox</div>
+</body>
+</html>
