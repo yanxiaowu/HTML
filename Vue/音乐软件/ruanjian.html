@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 60%;
+            height: 60%;
+            animation: round_animate 5s linear infinite;
+            animation-play-state: paused;
+        }
+        .playing{
+            animation-play-state: running;
+        }
+        @keyframes round_animate{
+                to{
+                    transform: rotate(1turn);
+                }
+            }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div id="search">
+            <input type="text" v-on:keyup.enter="searchMusic" v-model="query" />
+        </div>
+        <video :src="mvUrl" @pause="pausemv" controls="controls"></video>
+        <div id="display">
+            <ul>
+                <li v-for="item in musicList">
+                    <span @click = "playMusic(item.id)">{{ item.name }}</span>
+                    
+                    <span v-show="item.mvid!=0" @click="playMV(item.mvid)">mv</span>
+                </li>
+            </ul>
+        </div>
+        <audio :src="musicUrl" @play="play" @pause="pause" controls="controls" autoplay="autoplay"></audio>
+        <img :src="picUrl" alt="" :class="{playing:isPlaying}">
+
+        <div id="comment">
+            <ul>
+                <li v-for="item in comments">
+                    <h6>{{ item.user.nickname }}</h6>
+                    <p>{{ item.content }} </p>
+                </li>
+            </ul>
+        </div>
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
