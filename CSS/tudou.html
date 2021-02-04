@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tudou {
+            position: relative;
+            width: 444px;
+            height: 252px;
+            margin: 100px auto;
+        }
+        .mask {
+            display: none;
+            /* visibility: hidden; */
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,.3) url(img/paly.png) no-repeat center;
+        }
+        .tudou:hover .mask {
+            /* visibility: visible; */
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="tudou">
+        <div class="mask"></div>
+        <img src="img/tudou.jpeg" alt="tudou">
+    </div>
+</body>
+</html>
