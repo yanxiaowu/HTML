@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        #user,
+        #peizhi,
+        #juese{
+            float: left;
+            margin-right: 10px;
+        }
+        #user:hover{
+            color:blue;
+        }
+        #user:active{
+            color: blue;
+        }
+        #peizhi:hover{
+            color:blue;
+        }
+        #peizhi:active{
+            color: blue;
+        }
+        #juese:hover{
+            color:blue;
+        }
+        #juese:active{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="tab">
+        <div id="user" onclick="user()">用户管理</div>
+        <div id="peizhi" onclick="peizhi()">配置管理</div>
+        <div id="juese" onclick="juese()">角色管理</div><br><br>
+        <div id="content">内容</div>
+    </div>
+
+    <script>
+        function user(){
+            var content = document.getElementById("content");
+            content.innerHTML="用户管理";
+        }
+        function peizhi(){
+            var content = document.getElementById("content");
+            content.innerHTML="配置管理";
+        }
+        function juese(){
+            var content = document.getElementById("content");
+            content.innerHTML="角色管理";
+        }
+    </script>
+</body>
+</html>
