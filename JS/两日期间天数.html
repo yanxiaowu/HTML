@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var d1 = '2020-09-01';
+        var d2 = '2020-07-01';
+        function get (d1, d2) {
+            var date1 = new Date(d1);
+            var date2 = new Date(d2);
+            if (date1 > date2) {
+                var temp = date1;
+                date1 = date2;
+                date2 = temp;
+            }
+            date1.setDate(date1.getDate() + 1);
+            var dateArr = [];
+            while (date1 < date2) {
+                var mArr = (date1.getMonth() + 1).toString();
+                if (mArr.length == 1) {
+                    mArr = '0' + mArr;
+                }
+                var dArr = date1.getDate().toString();
+                if (dArr.length == 1) {
+                    dArr = '0' + dArr;
+                }
+                dateArr[dateArr.length] = date1.getFullYear() + '-' +
+                mArr + '-' + dArr;
+                date1.setDate(date1.getDate() + 1);
+            }
+            console.log(dateArr);
+        }
+        get (d1, d2);
+    </script>
+</body>
+</html>
